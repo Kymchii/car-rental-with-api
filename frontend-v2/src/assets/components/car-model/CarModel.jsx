@@ -1,5 +1,5 @@
 import Skeleton from "react-loading-skeleton"
-import { API_BASE_URL } from "../../../config/api"
+import { API_BASE_URL, IMAGEKIT_URL } from "../../../config/api"
 import { ButtonWhite } from "../ButtonWhite"
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -22,7 +22,7 @@ export const CarModel = ({ carModels, onOpenQuickRent, loading }) => {
             ) : (
                 carModels.map((item) => (
                     <div key={item.id} className="flex flex-col gap-2 bg-linear-to-t from-blue-500 via-blue-300 to-blue-100 p-4 rounded-md shadow-sm">
-                        <img src={`${API_BASE_URL}/storage/${item.photo}`} alt={item.name} />
+                        <img src={`${IMAGEKIT_URL}/${item.logo}`} alt={item.name} />
                         <div className="flex flex-col justify-end h-full gap-2">
                             <div>
                                 <h1 className="text-sm text-white font-semibold">{item.name}</h1>
