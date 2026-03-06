@@ -80,7 +80,7 @@ export const Register = ({ isRegister, setIsRegister, setIsLogin, onRegisterSucc
         <div className={`w-full h-full backdrop-blur-xs bg-slate-950/50 fixed z-50 inset-0 items-center justify-center ${isRegister ? 'flex' : 'hidden'}`}>
             <div className={`flex w-2xs sm:w-sm md:w-md lg:w-lg flex-col items-center gap-4 px-8 py-6 sm:px-8 md:px-16 bg-slate-50 shadow-md rounded-md ${isRegister ? 'opacity-100' : 'opacity-0'} delay-100 transition-all`}>
                 <div className="w-1/4">
-                    <img src='../../public/logo.png' alt="" />
+                    <img src='../../logo.png' alt="" />
                 </div>
                 {message && (
                     <Alert>{message}</Alert>
@@ -117,7 +117,7 @@ export const Register = ({ isRegister, setIsRegister, setIsLogin, onRegisterSucc
                                 </>
                             ) : 'Sign Up'}
                         </ButtonBlue600>
-                        <button className='flex gap-2 justify-center items-center border border-blue-600 rounded-full py-1 text-blue-600 cursor-pointer hover:bg-blue-600 hover:text-white'><img src="../../public/google-logo-search-new-svgrepo-com.svg" alt="google" className="w-3" />Continue with Google</button>
+                        <button className='flex gap-2 justify-center items-center border border-blue-600 rounded-full py-1 text-blue-600 cursor-pointer hover:bg-blue-600 hover:text-white'><img src="../../google-logo-search-new-svgrepo-com.svg" alt="google" className="w-3" />Continue with Google</button>
                         <ButtonRed600 onClick={handleCancelRegister} />
                         <small className="text-center text-slate-700">Have an account? <a href="" className="text-blue-600" onClick={handleSetLogin} >Sign In</a></small>
                     </div>
