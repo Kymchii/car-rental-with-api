@@ -2,3 +2,4 @@
 
 // Public API
 export const API_BASE_URL = 'https://car-rental-backend-production-466f.up.railway.app'
+export const IMAGEKIT_URL = 'https://ik.imagekit.io/kymchi'
