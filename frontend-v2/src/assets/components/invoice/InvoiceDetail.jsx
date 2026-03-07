@@ -55,7 +55,7 @@ export const InvoiceDetail = ({ setOpenInvoiceDetail, user, client, openInvoiceD
                         </div>
                         <div className='flex flex-col'>
                             <p className='font-medium text-white/50'>Payment status</p>
-                            <p className={`${(selectedInvoice?.payement == 1 ? 'text-green-600' : 'text-red-600') || ''}`}>{(selectedInvoice?.payment == 1 ? 'Paid' : 'Unpaid') || ''}</p>
+                            <p className={`${(selectedInvoice?.payment == 1 ? 'text-green-600' : 'text-red-600') || ''}`}>{(selectedInvoice?.payment == 1 ? 'Paid' : 'Unpaid') || ''}</p>
                         </div>
                     </div>
                 </div>
