@@ -13,7 +13,7 @@ export const NavMobile = ({ navItems, onOpenLogin, user, token, open, setOpen, o
                 </form>
                 <button className='text-base text-blue-600' onClick={() => setOpen(!open)}><PiListLight /></button>
             </div>
-            <div className={`fixed shadow-sm bg-white ${open ? 'top-15 opacity-100' : 'opacity-0 -top-full'} p-8 w-full grid grid-cols-1 gap-2 content-start justify-items-center text-blue-600 delay-250 transition-all z-10 text-base`}>
+            <div className={`fixed bg-white ${open ? 'translate-y-0 shadow-sm' : '-translate-y-full shadow-none'} p-8 w-full grid grid-cols-1 gap-2 content-start justify-items-center text-blue-600 delay-250 transition-all z-10 text-base top-0 left-0 right-0`}>
                 <button className='text-blue-600 text-base absolute right-4 top-4 sm:right-8 sm:top-8' onClick={() => setOpen(false)}><IoCloseOutline /></button>
                 <ul className='pt-4 w-full flex flex-col gap-4 items-center'>
                     {
