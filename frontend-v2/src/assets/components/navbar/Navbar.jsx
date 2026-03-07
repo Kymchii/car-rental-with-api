@@ -54,7 +54,7 @@ export const Navbar = ({ search, setSearch, user, onOpenLogin, onOpenInvoice, to
     }, []);
 
     return (
-        <div id="navbar" className={`grid grid-cols-2 ${open ? 'bg-white' : 'bg-white/80'} shadow-sm h-15 px-4 sm:px-8 w-full fixed inset-0 lg:grid-cols-5 z-20 content-center delay-100 transition-all flex items-center`}>
+        <div id="navbar" className={`grid grid-cols-2 ${open ? 'bg-white' : 'bg-white/80'} shadow-sm h-18 px-4 sm:px-8 w-full fixed inset-0 lg:grid-cols-5 z-20 content-center delay-100 transition-all flex items-center`}>
             <a className={`cursor-pointer lg:col-span-2`} onClick={() => setSelectedType(null)}>
                 <img src="../logo.png" alt="" className="w-20" />
             </a>

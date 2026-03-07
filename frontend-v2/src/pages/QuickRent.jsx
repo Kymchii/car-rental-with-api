@@ -6,7 +6,7 @@ import { Label } from "../assets/components/Label";
 import { Error } from "../assets/components/Error";
 import { ButtonBlue600 } from "../assets/components/ButtonBlue600";
 
-import { API_BASE_URL } from "../config/api";
+import { API_BASE_URL, IMAGEKIT_URL } from "../config/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -225,11 +225,11 @@ export const QuickRent = ({ carModel, openQuickRent, onCloseQuickRent, token, ed
                     <button onClick={onCloseQuickRent} className="cursor-pointer"><IoCloseOutline /></button>
                 </div>
                 <div className='flex justify-start gap-4 items-center py-4'>
-                    <img src={`${API_BASE_URL}/storage/${carModel?.photo || ''}`} alt={carModel?.name || ''} className="w-25" />
+                    <img src={`${IMAGEKIT_URL}/${carModel?.photo || ''}`} alt={carModel?.name || ''} className="w-25" />
                     <div className="flex flex-col gap-0.5">
-                        <h2 className="font-semibold">{carModel?.name || ''}</h2>
-                        <p className="text-xs text-black/50">Rp. {carModel?.price?.toLocaleString('id-ID') || ''}</p>
-                        <small className={`${(carModel?.is_available ? 'text-green-600' : 'text-red-600') || ''} font-light`}>{(carModel?.is_available ? 'Ready' : 'Not ready') || ''}</small>
+                        <h2 className="font-semibold text-base">{carModel?.name || ''}</h2>
+                        <p className="text-black/50">Rp. {carModel?.price?.toLocaleString('id-ID') || ''}</p>
+                        <p className={`${(carModel?.is_available ? 'text-green-600' : 'text-red-600') || ''} font-light`}>{(carModel?.is_available ? 'Ready' : 'Not ready') || ''}</p>
                     </div>
                 </div>
                 <form className='flex flex-col gap-4 pb-4 sm:pb-8 items-stretch' onSubmit={handleSubmit}>
@@ -253,7 +253,7 @@ export const QuickRent = ({ carModel, openQuickRent, onCloseQuickRent, token, ed
                         <input type='date' id='end_of' name='end_of' className="text-blue-600 px-4 py-4 border border-blue-600 placeholder:text-xs focus:outline-none focus:border-2 justify-self-center w-full bg-none h-7 placeholder:text-black/25 text-sm rounded-lg group-focus:delay-500 group-focus:transition-all read-only:bg-black/10" onChange={handleChange} value={formData.end_of} readOnly={(!carModel?.is_available) || ''} />
                         <Error errors={errors} name='end_of' />
                     </InputGroup>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center pb-4">
                         <ButtonBlue600 disabled={loading ? true : false} onClick={user && token ? undefined : onOpenLogin} type={user && token ? 'submit' : 'button'}>
                             {
                                 loading ? (

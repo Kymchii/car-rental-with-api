@@ -1,5 +1,5 @@
 import { IoCloseOutline } from "react-icons/io5";
-import { API_BASE_URL } from "../../../config/api"
+import { API_BASE_URL, IMAGEKIT_URL } from "../../../config/api"
 
 export const InvoiceDetail = ({ setOpenInvoiceDetail, user, client, openInvoiceDetail, selectedInvoice }) => {
     const formatPaymentMethod = (method) => {
@@ -24,7 +24,7 @@ export const InvoiceDetail = ({ setOpenInvoiceDetail, user, client, openInvoiceD
                     </div>
                     <div className='bg-linear-to-b from-blue-600 via-blue-400 to-blue-200 shadow-sm p-6 rounded-md text-white flex flex-col items-stretch'>
                         <div className='h-fit flex gap-4 items-start pb-2'>
-                            <img src={`${API_BASE_URL}/storage/${selectedInvoice?.car_type?.photo || ''}`} alt={selectedInvoice?.car_type?.name || ''} className='w-18' />
+                            <img src={`${IMAGEKIT_URL}/${selectedInvoice?.car_type?.photo || ''}`} alt={selectedInvoice?.car_type?.name || ''} className='w-18' />
                             <div className='flex flex-col w-full'>
                                 <h1 className='font-semibold'>{selectedInvoice?.car_type?.name || ''}</h1>
                                 <p className='text-white/75'>{selectedInvoice?.car_type?.car_brand?.name || ''}</p>

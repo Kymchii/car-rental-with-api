@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef } from "react";
-import { API_BASE_URL } from "../../../config/api"
+import { API_BASE_URL, IMAGEKIT_URL } from "../../../config/api"
 import { IoCloseOutline } from "react-icons/io5";
 import { TbFileInvoice } from "react-icons/tb";
 import { CiFileOff } from "react-icons/ci";
@@ -34,15 +34,15 @@ export const Invoice = ({ openInvoice, setOpenInvoice, invoices, onOpenInvoiceDe
                             <h1 className='border-b border-white/75 pb-2 font-bold'>{invoice.invoice_number}</h1>
                         </div>
                         <div className='flex gap-2 items-center'>
-                            <img src={`${API_BASE_URL}/storage/${invoice.car_type.photo}`} alt={invoice.car_type.name} className='w-20' />
+                            <img src={`${IMAGEKIT_URL}/${invoice.car_type.photo}`} alt={invoice.car_type.name} className='w-20' />
                             <div className='flex flex-col gap-0.5'>
-                                <h2 className='font-semibold'>{invoice.car_type.name}</h2>
-                                <small className='text-white/75'>{invoice.car_type.car_brand.name}</small>
+                                <h2 className='font-semibold text-base'>{invoice.car_type.name}</h2>
+                                <p className='text-white/75'>{invoice.car_type.car_brand.name}</p>
                             </div>
                         </div>
                         <div className='flex flex-col items-end gap-2'>
-                            <small className='font-light'>Total Rp. {invoice.total.toLocaleString('id-ID')}</small>
-                            <button className='flex gap-2 items-center py-1 px-4 rounded-full bg-white text-blue-600 text-xs cursor-pointer' onClick={() => onOpenInvoiceDetail(invoice)}><TbFileInvoice /> Detail</button>
+                            <small className='font-light text-sm text-white/75'>Total Rp. {invoice.total.toLocaleString('id-ID')}</small>
+                            <button className='flex gap-2 items-center py-1 px-4 rounded-full bg-white text-blue-600 text-base lg:text-sm cursor-pointer' onClick={() => onOpenInvoiceDetail(invoice)}><TbFileInvoice /> Detail</button>
                         </div>
                     </div>
                 ))

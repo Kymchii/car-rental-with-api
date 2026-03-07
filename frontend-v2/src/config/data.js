@@ -49,6 +49,42 @@ export const sedan = [
     }
 ]
 
+import SUV1 from '../../public/suv-1.jpg'
+import SUV2 from '../../public/suv-2.jpg'
+
+export const suv = [
+    {
+        img: SUV1,
+        message: 'Sewa Mobil Impian Anda, Mulai Petualangan Hari Ini',
+        align: 'items-start',
+        textAlign: 'text-left'
+    },
+    {
+        img: SUV2,
+        message: 'Perjalanan Nyaman Dimulai dari Sini',
+        align: 'items-start',
+        textAlign: 'text-left'
+    }
+]
+
+import MPV1 from '../../public/mpv-1.jpg'
+import MPV2 from '../../public/mpv-2.jpg'
+
+export const mpv = [
+    {
+        img: MPV1,
+        message: 'Sewa Mobil Impian Anda, Mulai Petualangan Hari Ini',
+        align: 'items-start',
+        textAlign: 'text-left'
+    },
+    {
+        img: MPV2,
+        message: 'Perjalanan Nyaman Dimulai dari Sini',
+        align: 'items-start',
+        textAlign: 'text-left'
+    }
+]
+
 import { FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa'
 
 export const socialMedia = [

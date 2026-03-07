@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/set-state-in-effect */
-import { sedan, swiper } from './config/data';
+import { mpv, sedan, suv, swiper } from './config/data';
 import axios from 'axios';
 import { API_BASE_URL } from './config/api';
 
@@ -238,6 +238,16 @@ function App() {
       {
         selectedType === 'sedan' && (
           <Hero swiper={sedan} />
+        )
+      }
+      {
+        selectedType === 'suv' && (
+          <Hero swiper={suv} />
+        )
+      }
+      {
+        selectedType === 'mpv' && (
+          <Hero swiper={mpv} />
         )
       }
       {
