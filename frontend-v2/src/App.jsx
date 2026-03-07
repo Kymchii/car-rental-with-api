@@ -95,6 +95,22 @@ function App() {
     }
 
     axios.defaults.headers.common['Authorization'] = `Bearer ${savedToken}`;
+
+    const interceptor = axios.interceptors.response.use((response) => response, (error) => {
+      if (error.response?.status === 401) {
+        setToken(null);
+        setUser(null);
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('user');
+
+        delete axios.defaults.headers.common['Authorization'];
+      }
+      return Promise.reject(error);
+    });
+
+    return () => {
+      axios.interceptors.response.eject(interceptor);
+    }
   }, []);
 
   const handleRegisterSuccess = (userData, authToken) => {
